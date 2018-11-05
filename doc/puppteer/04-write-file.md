@@ -1,5 +1,12 @@
+###  安装
+``` bash
+cnpm i --save fs
+```
+
+
+### 写入文件
+``` js
 const puppeteer = require('puppeteer');
-const fs = require('fs');
 
 (async () => {
   const browser = await (puppeteer.launch({ //设置超时时间
@@ -12,16 +19,14 @@ const fs = require('fs');
     headless: false
   }));
   const page = await browser.newPage();
-  for (let i = 120; i < 123; i++) {
+  for (let i = 120; i < 300; i++) {
     let ret = await getPageData(i)
     ret.id = i
     console.log('抓起后数据', ret)
-
-    //文件写入
-    fs.writeFileSync('./data.txt','这是第一行');
   }
 
   browser.close();
+
 
   /**
    * 获取数据
@@ -47,7 +52,5 @@ const fs = require('fs');
       return {}
     }
   }
-
-
-
 })();
+```

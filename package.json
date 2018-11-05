@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/su37josephxia/imooc-data-analysis#readme",
   "dependencies": {
+    "fs": "^0.0.1-security",
     "nodemon": "^1.18.5",
     "puppeteer": "^1.10.0"
   }
