@@ -1,4 +1,4 @@
 # Logs
 # Dependency directories
-/docker/mysql/
-/docker/superset/
+mysql/
+superset/
