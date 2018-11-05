@@ -1,9 +1,11 @@
 version: "3"
 services:
-  #  superset:
-  #    image: amancevice/superset
-  #    ports:
-  #      - "8888:8888"
+   superset:
+     image: amancevice/superset
+     volumes:
+       - ./superset:/home/superset
+     ports:
+       - "8088:8088"
    db:
      image: mysql:5.7
      volumes:

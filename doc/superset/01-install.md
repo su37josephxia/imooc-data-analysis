@@ -26,4 +26,10 @@ services:
 ``` bash
 docker-compose up
 
+
+#初始化数据库
+设置用户名和密码(docker exec -it 容器ID fabmanager create-admin –app superset)
+初始化数据库（docker exec -it 容器ID superset db upgrade）
+superset初始化（docker exec -it 容器ID superset init）
+开启superset服务（docker exec -it 容器ID superset runserver）
 ```
