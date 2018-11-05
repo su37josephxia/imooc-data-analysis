@@ -1,5 +1,7 @@
 const puppeteer = require('puppeteer');
-const fs = require('fs');
+const writeFile = require('./file.js');
+var moment = require('moment');
+moment.locale('zh-cn');
 
 (async () => {
   const browser = await (puppeteer.launch({ //设置超时时间
@@ -12,15 +14,16 @@ const fs = require('fs');
     headless: false
   }));
   const page = await browser.newPage();
-  for (let i = 120; i < 123; i++) {
-    let ret = await getPageData(i)
-    ret.id = i
-    console.log('抓起后数据', ret)
-
-    //文件写入
-    fs.writeFileSync('./data.txt','这是第一行');
+  for (let i = 1; i < 400; i++) {
+    let data = await getPageData(i)
+    if (data !== null) {
+      data.id = i
+      data.time = moment().format('YYYY-MM-DD HH:mm:ss')
+      console.log('抓起后数据', data)
+      //文件写入
+      writeFile(data);
+    }
   }
-
   browser.close();
 
   /**
@@ -41,13 +44,13 @@ const fs = require('fs');
         return {
           name,
           person: attr[2],
+          difficulty: attr[0],
+          duration: attr[1],
+          score: attr[3],
         }
       });
-    }catch(e){
-      return {}
+    } catch (e) {
+      return null
     }
   }
-
-
-
 })();

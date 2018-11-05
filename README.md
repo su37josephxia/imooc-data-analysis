@@ -1,6 +1,9 @@
 # 慕课网课程数据分析
 - Pupteer(chrome-headless)定向爬取购买量数据
-    - 安装pupteer
+    - [搭建pupteer环境]()
+    - [抓起单页]()
+    - [批量抓取]()
+    - [持久化]()
 - SuperSet数据可视化
 - Docker
 

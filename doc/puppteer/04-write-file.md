@@ -1,9 +1,12 @@
 ###  安装
 ``` bash
 cnpm i --save fs
+cnpm i --save moment
 ```
-
-
+### package 增加忽略
+``` bash
+nodemon app.js -i ./data/
+```
 ### 写入文件
 ``` js
 const puppeteer = require('puppeteer');
