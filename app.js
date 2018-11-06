@@ -11,7 +11,7 @@ moment.locale('zh-cn');
     // 打开开发者工具, 当此值为true时, headless总为false
     devtools: true,
     // 关闭headless模式, 不会打开浏览器
-    headless: true
+    headless: false
   }));
   const page = await browser.newPage();
   for (let i = 1; i < 400; i++) {
