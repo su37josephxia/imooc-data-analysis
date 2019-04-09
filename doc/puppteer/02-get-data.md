@@ -20,10 +20,10 @@ const puppeteer = require('puppeteer');
   // 浏览器内执行
   let ret = await page.evaluate(() => {
     let name = document
-      .querySelector('.course-class-infos .path span')
+      .querySelector('.course-infos-top .path span')
       .innerText
     let attr = Array
-      .from(document.querySelectorAll('.static-item .meta-value strong'))
+      .from(document.querySelectorAll('.fixed-wrap .info-bar .nodistance'))
       .map(v => v.innerText)
     return {
       name,
